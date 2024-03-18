@@ -13,6 +13,9 @@ migrateup:
 migratedown:
 	migrate -path db/migration -database "postgresql://root:pita1234@localhost:5432/simplebank?sslmode=disable" -verbose down
 
+migrateforce:
+	migrate -path db/migration -database "postgresql://root:pita1234@localhost:5432/simplebank?sslmode=disable" -verbose force 1
+
 sqlc:
 	sqlc generate
 
@@ -22,4 +25,4 @@ test:
 server:
 	go run main.go
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server
+.PHONY: postgres createdb dropdb migrateup migratedown migrateforce sqlc test server
