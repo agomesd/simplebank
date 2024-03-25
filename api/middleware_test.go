@@ -21,7 +21,7 @@ func addAuth(t *testing.T, request *http.Request, tokenMaker token.Maker, authTy
 	request.Header.Set(authHeaderKey, authHeader)
 }
 
-func TestAstateddleware(t *testing.T) {
+func TestMiddleware(t *testing.T) {
 	testCases := []struct {
 		name          string
 		setupAuth     func(t *testing.T, request *http.Request, tokenMaker token.Maker)
